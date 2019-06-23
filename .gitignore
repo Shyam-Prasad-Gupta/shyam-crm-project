@@ -1,0 +1,8 @@
+#to ignore project config files
+.settings
+.classpath
+.project
+.DS_Store
+#to ignore class files
+target/
+.class
