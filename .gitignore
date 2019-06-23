@@ -8,4 +8,4 @@ target/
 .class
 
 #to ignore logs files if any
-.log
+*.log

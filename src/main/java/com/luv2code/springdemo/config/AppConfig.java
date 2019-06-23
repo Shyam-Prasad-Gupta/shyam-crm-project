@@ -6,11 +6,13 @@ import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -27,8 +29,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @EnableWebMvc
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = "com.luv2code.springdemo")
-@PropertySource({ "classpath:persistence-mysql.properties" })
+@ComponentScan(basePackages = { "com.luv2code.springdemo", "com.shyam" })
+@PropertySource(value = { "classpath:persistence-mysql.properties" })
+@EnableAspectJAutoProxy
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired
@@ -47,11 +50,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 		return internalResourceViewResolver;
 	}
-	
+
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		// TODO Auto-generated method stub
-		//super.configureDefaultServletHandling(configurer);
+		// super.configureDefaultServletHandling(configurer);
 		configurer.enable();
 	}
 
