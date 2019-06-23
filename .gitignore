@@ -6,3 +6,6 @@
 #to ignore class files
 target/
 .class
+
+#to ignore logs files if any
+.log
