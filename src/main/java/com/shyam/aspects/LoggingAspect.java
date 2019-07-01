@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,12 +29,15 @@ public class LoggingAspect {
 
 	@Around("aroundAddUpdateUser()")
 	public void executeBeforeAndAfterAddingOrUpdatingCustomer(ProceedingJoinPoint pJoinPoint) {
-		// System.out.println("<<<<<<<<<<Hey, I am here in the arount advice>>>>>>.");
+		// System.out.println("<<<<<<<<<<Hey, I am here in the around advice>>>>>>.");
 		Logger log = Logger.getLogger(pJoinPoint.getSignature().getClass().getSimpleName());
 		log.log(Level.INFO, "Method signature from joinpoint is: " + pJoinPoint.getSignature());
 		boolean toUpdate = false;
-		Customer customerPreviousValue = null;
 		Customer customerToInsertOrUpdate = (Customer) pJoinPoint.getArgs()[0];
+		Customer customerPreviousValue = null;
+		customerPreviousValue = new Customer();
+		BeanUtils.copyProperties(customerToInsertOrUpdate, customerPreviousValue);;
+		//Customer customerPreviousValue = null;
 		if (pJoinPoint.getArgs() != null) {
 			if (customerToInsertOrUpdate.getId() > 0) {
 				toUpdate = true;

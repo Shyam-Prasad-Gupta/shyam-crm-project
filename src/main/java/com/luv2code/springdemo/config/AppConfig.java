@@ -66,7 +66,8 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 		// set the jdbc driver
 		try {
-			myDataSource.setDriverClass("com.mysql.jdbc.Driver");
+			//myDataSource.setDriverClass("com.mysql.jdbc.Driver");
+			myDataSource.setDriverClass(env.getProperty("jdbc.driver"));
 		} catch (PropertyVetoException exc) {
 			throw new RuntimeException(exc);
 		}
