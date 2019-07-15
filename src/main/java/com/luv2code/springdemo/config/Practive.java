@@ -16,7 +16,7 @@ class Practive
 	 int firstVar;
 	 String secondVar;
 	 float thirdVar;
-	 while(testCases > 0){
+	 /*while(testCases > 0){
 	     
 	     firstVar = scn.nextInt();
 	     secondVar = scn.next();
@@ -24,6 +24,13 @@ class Practive
 	     
 	     System.out.println(firstVar+" "+secondVar+" "+thirdVar);
 	     testCases--;
-	 }
+	 }*/
+	 File fl = new File("src/main/upload/shyam.txt");
+	 try {
+		fl.createNewFile();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	 }
 }

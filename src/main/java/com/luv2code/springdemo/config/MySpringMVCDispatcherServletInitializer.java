@@ -1,5 +1,8 @@
 package com.luv2code.springdemo.config;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -25,6 +28,12 @@ public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationC
 		// TODO Auto-generated method stub
 		
 		return new String[] {"/"};
+	}
+
+	@Override
+	protected void customizeRegistration(Dynamic registration) {
+		//super.customizeRegistration(registration);
+		registration.setMultipartConfig(new MultipartConfigElement(java.io., 21000, 41000, 0));
 	}
 
 }
