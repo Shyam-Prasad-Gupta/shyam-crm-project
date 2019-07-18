@@ -11,9 +11,6 @@
 
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
-<<<<<<< HEAD
-=======
-
 <script type="text/javascript">
 	function submitClicked(){
 		document.getElementById('uploadCSVSubmit').addEventListener('click',
@@ -23,7 +20,6 @@
 		}
 	}
 </script>
->>>>>>> dev
 
 </head>
 
@@ -36,36 +32,15 @@
 	</div>
 
 	<div id="container">
-<<<<<<< HEAD
 		
 		<div style="margin-top: 10px;">
-=======
 
 		<div id="content">
 
->>>>>>> dev
 			<!-- put new button: Add Customer -->
 			<input type="button" value="Add Customer"
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" />
-<<<<<<< HEAD
-			<!-- Add Customer list in CSV format button -->
-			<input type="button" value="Download CSV"
-				onclick="window.location.href='downloadCSV'; return false;"
-				class="add-button" />
-			<!-- Upload CSV data -->
-			<input type="button" value="Upload Customer Data"
-				onclick="window.location.href='uploadCSV'; return false;"
-				class="add-button" />
-		</div>
-		<div id="content">
-
-			<!-- put new button: Add Customer -->
-
-			<!-- <input type="button" value="Add Customer"
-				onclick="window.location.href='showFormForAdd'; return false;"
-				class="add-button" /> -->
-=======
 
 			<!-- put new button: Add Customer -->
 			<form method="post" enctype="multipart/form-data" action="processCSV" accept="csv"
@@ -84,7 +59,6 @@
 			<input type="button" value="Download PDF"
 				onclick="window.location.href='showFormForAdd'; return false;"
 				class="add-button" />
->>>>>>> dev
 
 			<!--  add our html table here -->
 

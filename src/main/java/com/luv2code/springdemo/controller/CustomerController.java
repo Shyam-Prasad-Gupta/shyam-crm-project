@@ -154,9 +154,6 @@ public class CustomerController {
 
 		return "redirect:/customer/list";
 	}
-<<<<<<< HEAD
-}
-=======
 
 	@RequestMapping(value = "/processCSV", method = RequestMethod.POST)
 	public String parseAndAddCustomerDataFromCSV(@RequestParam("uploadedCSV") MultipartFile csvFile) {
@@ -193,4 +190,3 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 }
->>>>>>> dev
