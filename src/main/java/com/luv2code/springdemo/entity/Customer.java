@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.util.StringUtils;
+
 @Entity
 @Table(name="customer")
 public class Customer {
@@ -64,6 +66,13 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+	}
+	
+	public boolean completeData() {
+		if(StringUtils.isEmpty(this.firstName) && StringUtils.isEmpty(this.lastName) && StringUtils.isEmpty(this.email)) {
+			return false;
+		}
+		return true;
 	}
 		
 }

@@ -33,7 +33,7 @@ public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationC
 	@Override
 	protected void customizeRegistration(Dynamic registration) {
 		//super.customizeRegistration(registration);
-		registration.setMultipartConfig(new MultipartConfigElement(java.io., 21000, 41000, 0));
+		registration.setMultipartConfig(new MultipartConfigElement("/uploads", 21000, 41000, 0));
 	}
 
 }

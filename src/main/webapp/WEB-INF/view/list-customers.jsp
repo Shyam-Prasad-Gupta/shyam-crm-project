@@ -44,15 +44,14 @@
 			<!-- put new button: Add Customer -->
 			<form method="post" enctype="multipart/form-data" action="processCSV" accept="csv"
 				id="form_csv">
-				<input type="file" value="Upload CSV Data" name="uploadedCSV"
-					id="csvFileUpload"/> 
+				<input type="file" name="uploadedCSV" /> 
 				<input type="submit"
 					value="Upload CSV Data" name="uploadCSV" class="add-button" />
 			</form>
 
 			<!-- put new button: Add Customer -->
 			<input type="button" value="Download CSV"
-				onclick="window.location.href='showFormForAdd'; return false;"
+				onclick="window.location.href='downloadCSV'; return false;"
 				class="add-button" />
 
 			<!-- put new button: Add Customer -->
