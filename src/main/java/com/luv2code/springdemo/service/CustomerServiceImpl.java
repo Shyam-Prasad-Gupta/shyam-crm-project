@@ -43,6 +43,14 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		customerDAO.deleteCustomer(theId);
 	}
+
+	@Override
+	public void saveCustomerList(List<Customer> customerList) {
+		
+		for(Customer cust : customerList) {
+			this.saveCustomer(cust);
+		}
+	}
 }
 
 
