@@ -9,3 +9,6 @@ target/
 
 #to ignore logs files if any
 *.log
+
+#to ignore pdf files if any
+*.pdf
