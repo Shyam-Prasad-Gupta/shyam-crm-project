@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import com.shyam.security.SecurityConfig;
+
 @Configuration
 //@EnableAspectJAutoProxy
 public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
@@ -14,7 +16,7 @@ public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationC
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Class[] {SecurityConfig.class};
 	}
 
 	@Override
