@@ -26,6 +26,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.shyam.properties.bean.DatabaseProperties;
 
 @EnableWebMvc
 @Configuration
@@ -37,6 +38,9 @@ public class AppConfig implements WebMvcConfigurer/*WebMvcConfigurerAdapter*/ {
 
 	@Autowired
 	private Environment env;
+	
+	@Autowired
+	private DatabaseProperties databaseProperties;
 
 	Logger logger = Logger.getLogger(getClass().getName());
 
@@ -89,6 +93,9 @@ public class AppConfig implements WebMvcConfigurer/*WebMvcConfigurerAdapter*/ {
 		myDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));
 		myDataSource.setMaxIdleTime(getIntProperty("connection.pool.maxIdleTime"));
 
+		//////////
+		System.out.println(databaseProperties.getJdbcURL());
+		/////////
 		return myDataSource;
 	}
 
